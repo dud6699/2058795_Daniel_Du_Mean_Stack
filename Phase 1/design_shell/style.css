@@ -1,0 +1,32 @@
+h1{
+    color: brown;
+    background-color:cornsilk;
+    text-align: center;
+    font-size: 50px;
+}
+
+h2{
+    color: red;
+    font-size: 40px;
+}
+
+p{
+    font-size: 20px;
+    color: black;
+}
+
+p.footer{
+    font-size: 20px;
+    color: white;
+}
+
+div{
+    margin: 0px 100px 0px 100px;
+    padding: 0px 20px 0px 20px;
+    border: 2px gold solid;
+}
+
+footer{
+    text-align: center;
+    background-color: gray;
+}
