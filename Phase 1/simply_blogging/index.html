@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Budget Planner</title>
+    <style>
+        h1{
+            padding-top: 10px;
+            text-align: center;
+            font-size: 60px;
+            font-family:'Brush Script MT', cursive;
+            color: forestgreen;
+        }
+        h2{
+            text-align: center;
+        }
+        label{
+            font-size: 20px;
+        }
+        a{
+            color:darkseagreen;
+        }
+        div.col-4{
+            padding: 20px;
+        }
+        div.blog_space{
+            padding: 20px;
+            border: 2px solid darkseagreen;
+            background-color: mintcream;
+            border-radius: 10px;
+        }
+        div.blog_content{
+            display: flex;
+        }
+        p{
+            overflow: auto;
+            margin-right: 10px;
+        }
+        img{
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+    <script src="functions.js"></script>
+</head>
+<body style="background-color:rgb(255, 250, 246);">
+    <div class="fixed-top" style="background-color: mintcream;">
+        <h1>Simply Blogging</h1>
+        <ul class="nav justify-content-center" style="font-size: 20px;">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Add Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+            </li>
+        </ul>   
+        <hr style="position: relative;bottom: 15px;width:450px;border: 1px solid forestgreen;border-radius: 1px;">
+        <hr style="position: relative;top:15px;border:2px solid darkseagreen;">
+    </div>
+
+    <div class = "container" style="width: 500px;margin-top:250px;">
+        <form class="form-group" style="border: 2px solid darkseagreen;border-radius: 10px;padding:25px;background-color:mintcream;" onsubmit="add_blog()">
+            <label class="label-primary">Title: </label>
+            <input type="text'" class="form-control" id="title" placeholder="Insert Title Here" required/><br>
+            <label class="label-primary">Article: </label>
+            <textarea class="form-control" id="article" rows="4" placeholder="Insert Article Text Here" required></textarea><br>
+            <label class="label-primary">Add Image: </label>
+            <input type="text" class="form-control" id="image" placeholder="Insert Image URL Link Here" required/><br>
+            <div class="text-center"><button type="submit" class="btn btn-primary" style="background-color:rgb(50, 107, 75);font-size: 20px;">Add Blog</button></div>
+            
+        </form>
+    </div>
+
+    <div id="blogs" class="container-fluid">
+
+    </div>
+
+    <script>
+        get_blogs();
+    </script>
+
+</body>
+</html>

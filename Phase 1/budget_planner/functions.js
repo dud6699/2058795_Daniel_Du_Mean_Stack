@@ -22,7 +22,6 @@ add_budget = () => {
         sessionStorage.setItem("budgets",JSON.stringify(arr));
         document.getElementById("msg").innerHTML="<p>Added new budget</p>";
     }
-    
 }
 
 get_budget = () => {
