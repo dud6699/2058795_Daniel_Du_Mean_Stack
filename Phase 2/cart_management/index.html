@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Cart Management</title>
+    <script src="functions.js"></script>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 50px;
+            padding-top: 30px;
+        }
+        h2{
+            font-size: 30px;
+        }
+        div.col{
+            border: 2px solid black;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        p{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Shopping Cart</h1>
+
+    <div class="container" style="padding:30px;">
+        <div class="row">
+            <div id="cart" class="col-4" style="text-align:left;"></div>
+            <div class="col-4"></div>
+            <div class="col-4" style="text-align: right;">
+                <a href="checkout.html" class="btn btn-success" style="font-size: 30px;">Checkout</a>
+            </div>
+        </div>
+    </div>    
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Flashlight</p>
+                <p>Price: $12</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(0)">Add Item</button>
+            </div>
+            <div class="col">
+                <p>Screwdriver</p>
+                <p>Price: $10</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(1)">Add Item</button>
+            </div>
+            <div class="col">
+                <p>Bucket</p>
+                <p>Price: $15</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(2)">Add Item</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Hammer</p>
+                <p>Price: $25</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(3)">Add Item</button>
+            </div>
+            <div class="col">
+                <p>Saw</p>
+                <p>Price: $30</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(4)">Add Item</button>
+            </div>
+            <div class="col">
+                <p>Paintbrush</p>
+                <p>Price: $15</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(5)">Add Item</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Hat</p>
+                <p>Price: $22</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(6)">Add Item</button>
+            </div>
+            <div class="col">
+                <p>Sunglasses</p>
+                <p>Price: $24</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(7)">Add Item</button>
+            </div>
+            <div class="col">
+                <p>Batteries</p>
+                <p>Price: $5</p>
+                <button type="button" class="btn btn-info" style="font-size: 24px;" onclick="add_item(8)">Add Item</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        update_cart();
+    </script>
+
+</body>
+</html>

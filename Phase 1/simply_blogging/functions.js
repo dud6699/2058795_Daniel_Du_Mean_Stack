@@ -28,7 +28,6 @@ get_blogs = () => {
             output += '<div class = "col"></div>';
         }
     }
-    document.getElementById("blogs").innerHTML=output;
 }
 
 //add blog
