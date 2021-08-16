@@ -44,7 +44,7 @@ function fill_checkout(){
     document.getElementById("checkout").innerHTML=output;
 }
 
-
+ 
 function get_quantity(item:number, arr:number[]){
     let count = 0;
     arr.forEach(element => {

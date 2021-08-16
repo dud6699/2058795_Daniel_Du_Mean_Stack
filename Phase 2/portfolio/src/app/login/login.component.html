@@ -1,0 +1,59 @@
+<div *ngIf = "loginPage">
+    <h2>Login Form</h2>
+    <form #loginRef="ngForm" 
+    (ngSubmit)="checkUser(loginRef)">
+    <label>UserName: </label>
+    <input type="text" name="user" ngModel required/><br/>
+    <label>Password: </label>
+    <input type="password" name="pass" ngModel required/><br/>
+    <input type="submit" value="submit" [disabled]="!loginRef.valid"/>
+    </form>
+    <br/>
+    {{msg}}
+    <br>
+    <a href="#" (click)="changePage(1)">Register</a>
+</div>
+
+<div *ngIf = "regisPage">
+    <h2>Registration Form</h2>
+    <form #regisRef="ngForm" 
+    (ngSubmit)="regisUser(regisRef)">
+    <label>First Name: </label>
+    <input type="text" name="first" ngModel required/><br/>
+    <label>Last Name: </label>
+    <input type="password" name="last" ngModel required/><br/>
+    <label>UserName: </label>
+    <input type="text" name="user" ngModel required/><br/>
+    <label>Password: </label>
+    <input type="password" name="pass" ngModel required/><br/>
+    <input type="submit" value="submit" [disabled]="!regisRef.valid"/>
+    <input type="reset"/>
+    </form>
+    <br/>
+    {{msg}}
+    <br>
+    <a href="#" (click)="changePage(0)">Login</a>
+</div>
+
+<div *ngIf = "contactPage">
+    <h2>My Portfolio</h2>
+    <h3>Welcome {{current_user}}!</h3>
+    <a href="#" (click)="changePage(0)">Logout</a>
+    <br>
+    <form #contactRef="ngForm"
+    (ngSubmit)="newContact(contactRef)">
+    <label>Contact Name: </label>
+    <input type="text" name="name" ngModel required/><br/>
+    <label>Phone Number: </label>
+    <input type="number" name="number" ngModel required/><br/>
+    <input type="submit" value="save" [disabled]="!contactRef.valid"/>
+    </form>
+    <br>
+    {{msg}}
+    <br>
+    <br>
+    <div [innerHTML]="table_content" style="text-align: left;">
+
+    </div>
+    
+</div>
