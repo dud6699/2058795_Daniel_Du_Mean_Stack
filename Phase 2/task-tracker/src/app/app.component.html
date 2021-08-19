@@ -1,0 +1,45 @@
+<div>
+    <h1>Task Tracker</h1>
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <div style="height:100%">
+                <h2>To-do Tasks</h2>
+                <form [formGroup] = "taskRef" (ngSubmit)="addTask()">
+                    <div style="text-align: right;">
+                        <label>ID: </label>
+                        <input type="text" formControlName="id"/><br>
+                        <label>Name: </label>
+                        <input type="text" formControlName="name"/><br>
+                        <label>Task: </label>
+                        <input type="text" formControlName="task"/><br>
+                        <label>Deadline: </label>
+                        <input type = "date" formControlName="date"><br>
+                    </div>
+                    <div style="text-align: center;">
+                        <input type="submit" value="Submit" [disabled]="!taskRef.valid"/>
+                        <input type="reset"/>
+                    </div>
+                </form>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div style="height:100%">
+                <h2>To-do List</h2>
+                <table width="500px">
+                    <tr>
+                        <th>Emp ID</th>
+                        <th>Name</th>
+                        <th>Task</th>
+                        <th>Deadline</th>
+                    </tr>
+                    <tr *ngFor="let task of data">
+                        <td>{{task.id}}</td>
+                        <td>{{task.name}}</td>
+                        <td>{{task.task}}</td>
+                        <td>{{task.date}}</td>
+                    </tr>
+                </table>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
