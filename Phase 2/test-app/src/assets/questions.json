@@ -1,0 +1,12 @@
+[
+    {"question":"3 + 7 = ?","ans1":"10","ans2":"27","ans3":"13","ans4":"17","correct":"10"},
+    {"question":"12 - 5 = ?","ans1":"10","ans2":"7","ans3":"2","ans4":"12","correct":"7"},
+    {"question":"3 * 12 = ?","ans1":"34","ans2":"36","ans3":"38","ans4":"40","correct":"36"},
+    {"question":"7^2 = ?","ans1":"45","ans2":"40","ans3":"36","ans4":"49","correct":"49"},
+    {"question":"4^3 = ?","ans1":"50","ans2":"56","ans3":"63","ans4":"64","correct":"64"},
+    {"question":"3x + 2 = 14. What is x?","ans1":"1","ans2":"3","ans3":"4","ans4":"7","correct":"4"},
+    {"question":"4x^2 = 36. What is x?","ans1":"3","ans2":"2","ans3":"6","ans4":"8","correct":"3"},
+    {"question":"A rectangle has a width of 3 and a height of 7. What is it's area?","ans1":"12","ans2":"21","ans3":"31","ans4":"26","correct":"21"},
+    {"question":"A cube has edges of length 2. What is it's volume?","ans1":"16","ans2":"7","ans3":"8","ans4":"12","correct":"8"},
+    {"question":"How many edges does a hexagon have?","ans1":"5","ans2":"6","ans3":"7","ans4":"8","correct":"6"}
+]

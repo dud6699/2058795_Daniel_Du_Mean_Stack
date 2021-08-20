@@ -1,0 +1,11 @@
+span.correct{
+    color:green;
+}
+
+span.incorrect{
+    color:red
+}
+
+p{
+    font-size: 20px;
+}

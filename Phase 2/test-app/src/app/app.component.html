@@ -1,0 +1,18 @@
+<h1>Online Test Application</h1>
+<form [formGroup] = "ansRef" (ngSubmit)="gradeTest()">
+  <div *ngFor="let q of questionData; let i = index;">
+    <h2>Question {{i+1}}</h2>
+    <h3>{{q.question}}</h3>
+    <div *ngFor="let ans of [q.ans1,q.ans2,q.ans3,q.ans4]">
+      <input type="radio" formControlName={{q.question}} value={{ans}} name={{q.question}}/>{{ans}}
+      <span class = "correct" *ngIf="correctAns(ans,q.correct,q.question)">Correct</span>
+      <span class = "incorrect" *ngIf="incorrectAns(ans,q.correct,q.question)">Incorrect</span>
+      <span class = "correct" *ngIf="selectedAns(ans,q.correct,q.question)">Selected Correct</span><br>
+    </div>
+  </div>
+  <br>
+  <input type="submit" value="Submit" [disabled]="!ansRef.valid || ansRef.disabled" style="margin-right:10px;"/>
+  <input *ngIf="ansRef.disabled" type="button" (click)="resetTest()" value = "Retry"/>
+</form>
+<br>
+<p *ngIf="ansRef.disabled">You {{result}} Your score is {{score}}/{{total}}</p>
