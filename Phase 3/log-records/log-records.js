@@ -20,7 +20,9 @@ function recordInfo(){
     let time = new Date(Date.now())
     let date = time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear();
     let t = time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
-
+	try{
+		
+	}
     data.push({first:first,last:last,gender:gender,email:email,date:date,time:t});
 
     fs.writeFileSync("logs.json",JSON.stringify(data));

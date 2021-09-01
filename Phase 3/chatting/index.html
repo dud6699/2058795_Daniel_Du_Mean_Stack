@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- connecting library file part of node_module folder -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        var messageLog = [];
+
+        socket.on("obj1",(msg)=> {
+            let time = new Date(Date.now());
+            messageLog.push("Chat Bot: " + msg + "   (" + time.getHours()+":"+time.getMinutes()+":"+time.getSeconds() + ")");
+            updateLog();
+        })
+
+        function updateLog(){
+            let disp = "";
+            for(let i = 0; i < messageLog.length; ++i){
+                disp += "<p>" + messageLog[i] + "</p>";
+            }
+            let div = document.getElementById("chatLog");
+            div.innerHTML = disp;
+            div.scrollTop = div.scrollHeight;
+        }
+
+        function sendMessage(send){
+            let time = new Date(Date.now());
+            messageLog.push("You: " + send.value + "   (" + time.getHours()+":"+time.getMinutes()+":"+time.getSeconds() + ")");
+            socket.emit("obj",send.value);
+            send.value = "";
+            updateLog();
+        }        
+    </script>
+</head>
+<body>
+    <h2>Socket IO ChatBot</h2>
+    <div id="chatLog" style="border:1px solid black; padding:10px; width: 400px; height: 500px; overflow-y:scroll"></div>
+    <br>
+    <form onsubmit="sendMessage(message); return false;">
+        <label>Message Chatbot: </label>
+        <input type="text" name="message" required/>
+        <br><br>
+        <input type="submit" value="Send"/>
+    </form>
+    <br>
+    <p>Try: [Hi], [Who are you?], [What is McDonalds?], [Bye]</p>
+    
+   
+</body>
+</html>
