@@ -1,0 +1,13 @@
+use callRecord
+
+var file = cat('.../call_data.json'); //the file path of call_data.json
+
+var words = JSON.parse(file);
+
+db.createCollection("callData");
+
+for(let i = 0; i < words.length; ++i){
+    db.callData.insert(words[i]);
+}
+
+db.callData.find();
