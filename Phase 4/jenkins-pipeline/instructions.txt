@@ -1,0 +1,39 @@
+run "docker pull jenkins/jenkins" in command prompt.
+
+run "docker run -p 8080:8080 jenkins/jenkins" in command prompt.
+
+go to https://localhost:8080 in the browser and input the password given in the command prompt.
+
+set up admin and install suggested plugins.
+
+click new item, and name the project "Jenkins Pipeline" and click on the pipeline option and click ok.
+
+on the next page, you can enter a description and enter the following script under pipeline script:
+pipeline {
+    agent any
+    stages {
+        stage('Setup') {
+            steps {
+                echo 'all setup is ready'
+            }
+        }
+        stage('Checking the version') {
+            steps {
+                echo 'Version verfied'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'build the project'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'project testing done successfully'
+            }
+        }
+    }
+}
+
+After saving, click build now to run the script.
+
